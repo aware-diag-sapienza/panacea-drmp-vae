@@ -1,0 +1,36 @@
+#!/bin/bash
+
+DOCKER_REPOSITORY=localhost:5000
+NETWORK=drmp-vae_backend
+
+SERVER_CONTAINER_NAME="vae"
+SERVER_IMAGE_NAME="${DOCKER_REPOSITORY}/${SERVER_CONTAINER_NAME}"
+SERVER_PUBLIC_PORT=3001
+SERVER_PRIVATE_PORT=3001
+
+REDIS_CONTAINER_NAME="vae_redis"
+REDIS_IMAGE_NAME="redis"
+REDIS_PUBLIC_PORT=6379
+REDIS_PRIVATE_PORT=6379
+
+docker stop ${SERVER_CONTAINER_NAME}
+docker rm ${SERVER_CONTAINER_NAME}
+docker pull ${SERVER_IMAGE_NAME}
+
+docker stop ${REDIS_CONTAINER_NAME}
+docker rm ${REDIS_CONTAINER_NAME}
+docker pull ${REDIS_IMAGE_NAME}
+
+docker run -d \
+  --name ${REDIS_CONTAINER_NAME} \
+  --network ${NETWORK} \
+  --publish ${REDIS_PUBLIC_PORT}:${REDIS_PRIVATE_PORT} \
+  --restart always \
+  $REDIS_IMAGE_NAME
+
+docker run -d \
+  --name ${SERVER_CONTAINER_NAME} \
+  --network ${NETWORK} \
+  --publish ${SERVER_PUBLIC_PORT}:${SERVER_PRIVATE_PORT} \
+  --restart always \
+  $SERVER_IMAGE_NAME

@@ -1,0 +1,4 @@
+version: '3.7'
+services:
+  dist_server:
+    command: npm run serve

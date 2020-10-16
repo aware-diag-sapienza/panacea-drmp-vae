@@ -1,0 +1,25 @@
+FROM keymetrics/pm2:12-alpine
+WORKDIR /usr/src/app
+
+ENV DIST_SERVER_HOST vae
+ENV SERVER_PORT=3001
+ENV DIST_REDIS_HOST vae_redis
+ENV REDIS_PORT 6379
+
+ENV DIST_DB_HOST dist_db
+ENV DB_PORT 27017
+ENV DB_CREDENTIALS yes
+ENV DB_USER drmpAdmin
+ENV DB_PWD drmpAdmin
+ENV DB_NAME drmp
+
+ENV STORAGE_HOST sgw
+ENV STORAGE_IP 0
+ENV STORAGE_PORT 7001
+ENV STORAGE_CUSTOM_PORTS no
+ENV STORAGE_ADDRESS host
+
+COPY app/package*.json ./
+RUN ["npm", "install", "--production"]
+COPY app/ .
+CMD ["pm2-runtime", "start", "pm2.json"]

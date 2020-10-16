@@ -1,0 +1,15 @@
+import * as constants from './constants'
+import { reducer, actions } from './slice'
+import * as selectors from './selectors'
+import * as thunks from './thunks'
+
+import * as C from './components'
+
+export default {
+  constants,
+  reducer,
+  actions,
+  selectors,
+  thunks,
+  C
+}

@@ -1,0 +1,35 @@
+{
+  "short_name": "PANACEA DRMP",
+  "name": "PANACEA Dynamic Risk Management Platform",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "img/panacea-396x128.png",
+      "type": "image/png",
+      "sizes": "396x128"
+    },
+    {
+      "src": "img/panacea-594x192.png",
+      "type": "image/png",
+      "sizes": "594x192"
+    },
+    {
+      "src": "img/panacea-logo-128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "img/panacea-logo-150.png",
+      "type": "image/png",
+      "sizes": "150x150"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

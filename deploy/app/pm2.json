@@ -1,0 +1,8 @@
+{
+  "apps" : [
+    {
+      "name": "vae",
+      "script": "./index.js"
+    }
+  ]
+}

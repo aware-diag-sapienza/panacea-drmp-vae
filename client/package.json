@@ -1,0 +1,80 @@
+{
+  "name": "drmp-vae-client",
+  "description": "PANACEA Dynamic Risk Management Platform - VAE Client",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.js",
+  "homepage": ".",
+  "author": "A.WA.RE Research Group (http://aware.diag.uniroma1.it/)",
+  "contributors": [
+    "Simone Lenti <lenti@diag.uniroma1.it>"
+  ],
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "@material-ui/core": "^4.9.8",
+    "@material-ui/icons": "^4.9.1",
+    "@mdi/svg": "^5.0.45",
+    "@reduxjs/toolkit": "^1.3.2",
+    "axios": "^0.19.2",
+    "clsx": "^1.1.0",
+    "cytoscape": "^3.14.1",
+    "cytoscape-cola": "^2.3.0",
+    "cytoscape-cxtmenu": "^3.1.2",
+    "cytoscape-dagre": "^2.2.2",
+    "cytoscape-popper": "^1.0.6",
+    "d3-scale": "^3.2.1",
+    "d3-scale-chromatic": "^2.0.0",
+    "eslint-config-react-app": "^5.2.1",
+    "material-table": "^1.57.2",
+    "mdi-material-ui": "^6.13.2",
+    "nanoid": "^3.0.2",
+    "notistack": "^0.9.9",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-cytoscapejs": "^1.2.1",
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^5.2.0",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.1",
+    "react-sizeme": "^2.6.12",
+    "react-spinners-css": "^1.1.7",
+    "redux": "^4.0.5",
+    "redux-orm": "^0.16.1",
+    "redux-persist": "^6.0.0",
+    "socket.io-client": "^2.3.0"
+  },
+  "devDependencies": {
+    "lorem-ipsum": "^2.0.3",
+    "redux-logger": "^3.0.6",
+    "standard": "^14.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "standard": {
+    "env": [
+      "es6"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

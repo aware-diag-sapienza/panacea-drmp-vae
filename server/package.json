@@ -1,0 +1,58 @@
+{
+  "name": "drmp-vae-client",
+  "description": "PANACEA Dynamic Risk Management Platform - VAE Server",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.js",
+  "author": "A.WA.RE Research Group (http://aware.diag.uniroma1.it/)",
+  "contributors": [
+    "Simone Lenti <lenti@diag.uniroma1.it>"
+  ],
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "connect-redis": "^4.0.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "ejs": "^3.0.2",
+    "eslint-config-standard": "^14.1.1",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "express-session": "^1.17.0",
+    "helmet": "^3.22.0",
+    "http-status-codes": "^1.4.0",
+    "ip": "^1.1.5",
+    "mongoose": "^5.9.7",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "redis": "^3.0.2",
+    "socket.io": "^2.3.0",
+    "webpack-node-externals": "^1.7.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "madge": "^3.8.0",
+    "nodemon": "^2.0.2",
+    "standard": "^14.3.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "build": "webpack --config webpack.config.js",
+    "serve": "pm2 start pm2.json",
+    "stop": "pm2 stop all",
+    "delete": "pm2 delete all"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  },
+  "standard": {
+    "env": [
+      "es6"
+    ]
+  }
+}

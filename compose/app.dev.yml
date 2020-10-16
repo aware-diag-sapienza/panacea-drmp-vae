@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  server:
+    env_file:
+      - ${DIR}/conf/networks.dev.env
+      - ${DIR}/conf/node.dev.env
+      - ${DIR}/conf/db_admin.dev.env
+      - ${DIR}/conf/storage.dev.env
+  client:
+    env_file:
+      - ${DIR}/conf/networks.dev.env
+      - ${DIR}/conf/node.dev.env
+  db:
+    env_file:
+      - ${DIR}/conf/networks.dev.env
+      - ${DIR}/conf/db.dev.env
+      - ${DIR}/conf/db_admin.dev.env
+  redis:
+    env_file:
+      - ${DIR}/conf/networks.dev.env

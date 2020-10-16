@@ -1,0 +1,8 @@
+{
+  "apps" : [
+    {
+      "name": "dist_server",
+      "script": "./index.js"
+    }
+  ]
+}

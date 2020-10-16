@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  server:
+    env_file:
+      - ${DIR}/conf/networks.prod.env
+      - ${DIR}/conf/node.prod.env
+      - ${DIR}/conf/storage.prod.env
+  client:
+    env_file:
+      - ${DIR}/conf/networks.prod.env
+      - ${DIR}/conf/node.prod.env

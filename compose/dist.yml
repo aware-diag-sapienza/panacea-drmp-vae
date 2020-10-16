@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  dist_server:
+    container_name: ${DIST_SERVER_HOST}
+    build:
+      context: ${DIR}/dist
+      dockerfile: Dockerfile
+    volumes:
+      - ${DIR}/dist:/dist
+      - ${DIR}/conf/ssl.prod:/dist/ssl:ro
+    env_file:
+      - ${DIR}/conf/hosts.env
+      - ${DIR}/conf/networks.prod.env
+      - ${DIR}/conf/node.prod.env
+      - ${DIR}/conf/storage.prod.env
+    networks:
+      - dist
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on:
+      - ${DIST_DB_HOST}
+      - ${DIST_REDIS_HOST}
+  dist_db:
+    image: mongo:4
+    container_name: ${DIST_DB_HOST}
+    restart: always
+    volumes:
+      - ${DIR}/db/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+      - ${DIR}/db/data/prod:/data/db
+    env_file:
+      - ${DIR}/conf/hosts.env
+      - ${DIR}/conf/networks.prod.env
+      - ${DIR}/conf/db.prod.env
+      - ${DIR}/conf/db_admin.prod.env
+    networks:
+      - dist
+    ports:
+      - ${DB_PORT}:${DB_PORT}
+  dist_redis:
+    image: redis:5-alpine
+    container_name: ${DIST_REDIS_HOST}
+    env_file:
+      - ${DIR}/conf/hosts.env
+      - ${DIR}/conf/networks.prod.env
+    networks:
+      - dist
+    ports:
+      - ${REDIS_PORT}:${REDIS_PORT}
+
+networks:
+  dist:
+    driver: bridge
